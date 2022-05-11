@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 
-from typing import Any, Dict, Iterable, Tuple
+from typing import Any, Dict, Iterable
 
 import argparse
 import datetime
@@ -95,7 +95,7 @@ class Exploit:
         """
         Get outfile
         """
-        return os.path.join(str(self.cve.year), str(self.cve), self.data['owner']['login'] + '.zip')
+        return os.path.join(str(self.cve.year), str(self.cve), self.login() + '.zip')
 
     def updated_at(self) -> int:
         """
