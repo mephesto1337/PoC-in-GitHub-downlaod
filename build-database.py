@@ -126,7 +126,7 @@ class Exploit:
         """
         try:
             branch = self.get_branch_name()
-            r = requests.get(f'{self.url()}/archive/refs/head/{branch}.zip', stream=True)
+            r = requests.get(f'{self.url()}/archive/refs/heads/{branch}.zip', stream=True)
             with open(output_file, 'wb') as f:
                 for chunk in r.iter_content(8192):
                     f.write(chunk)
